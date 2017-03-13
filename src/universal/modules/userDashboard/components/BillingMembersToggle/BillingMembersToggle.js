@@ -5,7 +5,6 @@ import {withRouter} from 'react-router';
 
 const BillingMembersToggle = (props) => {
   const {activeOrgDetail, router, orgId} = props;
-
   const items = [
     {
       label: 'Billing',
@@ -18,6 +17,12 @@ const BillingMembersToggle = (props) => {
       icon: 'users',
       isActive: activeOrgDetail === MEMBERS_PAGE,
       onClick: () => router.push(`/me/organizations/${orgId}/members`)
+    },
+    {
+      label: 'Teams',
+      icon: 'users',
+      isActive: activeOrgDetail === 'teams',
+      onClick: () => router.push(`/me/organizations/${orgId}/teams`)
     }
   ];
 

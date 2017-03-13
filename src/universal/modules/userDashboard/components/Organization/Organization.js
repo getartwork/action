@@ -5,7 +5,7 @@ import ui from 'universal/styles/ui';
 import FontAwesome from 'react-fontawesome';
 import {Link} from 'react-router';
 import goBackLabel from 'universal/styles/helpers/goBackLabel';
-import {BILLING_PAGE, ORGANIZATIONS} from 'universal/utils/constants';
+import {BILLING_PAGE, MEMBERS_PAGE, TEAMS_PAGE, ORGANIZATIONS} from 'universal/utils/constants';
 import UserSettingsWrapper from 'universal/modules/userDashboard/components/UserSettingsWrapper/UserSettingsWrapper';
 import appTheme from 'universal/styles/theme/appTheme';
 import BillingMembersToggle from 'universal/modules/userDashboard/components/BillingMembersToggle/BillingMembersToggle';
@@ -13,6 +13,7 @@ import makeDateString from 'universal/utils/makeDateString';
 import EditOrgName from 'universal/modules/userDashboard/components/EditOrgName/EditOrgName';
 import OrgBillingContainer from 'universal/modules/userDashboard/containers/OrgBilling/OrgBillingContainer';
 import OrgMembersContainer from 'universal/modules/userDashboard/containers/OrgMembers/OrgMembersContainer';
+import OrgTeamsContainer from 'universal/modules/userDashboard/containers/OrgTeams/OrgTeamsContainer';
 import EditableAvatar from 'universal/components/EditableAvatar/EditableAvatar';
 import PhotoUploadModal from 'universal/components/PhotoUploadModal/PhotoUploadModal';
 import OrgAvatarInput from 'universal/modules/userDashboard/components/OrgAvatarInput/OrgAvatarInput';
@@ -35,7 +36,18 @@ const Organization = (props) => {
   } = props;
   const {id: orgId, createdAt, name: orgName, picture: orgAvatar} = org;
   initialValues.orgName = orgName;
-  const OrgSection = activeOrgDetail === BILLING_PAGE ? OrgBillingContainer : OrgMembersContainer;
+  let OrgSection;
+  switch (activeOrgDetail) {
+    case BILLING_PAGE:
+      OrgSection = OrgBillingContainer;
+      break;
+    case MEMBERS_PAGE:
+      OrgSection = OrgMembersContainer;
+      break;
+    case TEAMS_PAGE:
+      OrgSection = OrgTeamsContainer;
+      break;
+  }
   const pictureOrDefault = orgAvatar || defaultOrgAvatar;
   const toggle = <EditableAvatar hasPanel picture={pictureOrDefault} size={96} unstyled />;
   return (

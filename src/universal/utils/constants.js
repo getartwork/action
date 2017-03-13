@@ -102,6 +102,7 @@ export const settingsOrder = [SETTINGS, ORGANIZATIONS, NOTIFICATIONS];
 /* Org Settings */
 export const BILLING_PAGE = 'billing';
 export const MEMBERS_PAGE = 'members';
+export const TEAMS_PAGE = 'teams';
 
 /* User Org Roles */
 export const BILLING_LEADER = 'billingLeader';
