@@ -45,10 +45,16 @@ const mapStateToProps = (state, props) => {
 };
 
 const TeamContainer = (props) => {
-  const {children, hasDashAlert, team, teamMembers} = props;
+  const {
+    children,
+    hasDashAlert,
+    team,
+    teamMembers
+  } = props;
   const readyEnough = team.id;
+  const pageTitle = team !== null ? `${team.name} Team Dashboard | Parabol` : 'Team Dashboard | Parabol';
   return (
-    <DashboardWrapper title="Team Dashboard">
+    <DashboardWrapper title={pageTitle}>
       {readyEnough ?
         <Team
           hasDashAlert={hasDashAlert}
@@ -68,7 +74,7 @@ TeamContainer.propTypes = {
   children: PropTypes.any.isRequired,
   hasDashAlert: PropTypes.bool,
   team: PropTypes.object.isRequired,
-  teamMembers: PropTypes.array.isRequired,
+  teamMembers: PropTypes.array.isRequired
 };
 
 export default

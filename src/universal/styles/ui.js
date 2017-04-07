@@ -202,6 +202,7 @@ const ui = {
   // ---------------------------------------------------------------------------
   cardBorderColor: appTheme.palette.mid30l,
   cardBorderRadius: borderRadiusMedium,
+  cardBoxShadow: '0 1px 2px rgba(103, 107, 139, .75)',
   cardMaxWidth: '17.5rem',
   cardMinHeight: '7.5rem',
   cardPaddingBase: '.5rem',
@@ -209,7 +210,7 @@ const ui = {
     backgroundColor: appTheme.palette.light10l,
     borderColor: appTheme.palette.mid70l,
     borderRadius: borderRadiusMedium,
-    boxShadow: '0 1px 2px rgba(0, 0, 0, .15)'
+    boxShadow: '0 6px 12px rgba(0, 0, 0, .25)'
   },
   zCard: zIndexScale(6),
 
@@ -226,6 +227,12 @@ const ui = {
   dashGutter: '1rem',
   // Note: property 'dashMinWidth' prevents layout from collapsing in Safari
   //       in a better future we may be more adaptive/responsive (TA)
+  dashHeaderTitleStyles: {
+    color: appTheme.palette.dark,
+    fontSize: '1.75rem',
+    fontWeight: 400,
+    lineHeight: '1.5'
+  },
   dashMinWidth: '79rem',
   dashAlertHeight: '2.625rem',
   dashSectionHeaderLineHeight: '2rem',
@@ -334,6 +341,7 @@ const ui = {
 
   // Meeting
   // ---------------------------------------------------------------------------
+  meetingSidebarGutter: '.5rem',
   meetingSidebarWidth: '15rem',
 
   // Menus

@@ -4,6 +4,24 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 This CHANGELOG follows conventions [outlined here](http://keepachangelog.com/).
 
+## v0.17.3 - 05-Apr-2017
+### Added
+- Action meeting layout and check-in UI/UX changes:
+   - #717 Simplified meeting check-in process
+   - #627 More vertical height during project updates
+   - New placement and look for callouts and avatars
+- New counters on project columns
+
+## v0.17.2 - 04-Apr-2017
+### Added
+- #555 can now archive teams
+  - N.B. teams can't yet be unarchived, so be careful :)
+- #878 superuser GraphQL endpoint `extendTrial` to extend trial time
+
+### Fixed
+- #866 trial date completion bug
+- #868, #879 agendas items not marked as complete
+
 ## v0.17.1 - 29-Mar-2017
 ### Fixed
 - #859 infinite redirect loop when deleting the last phaseItem
